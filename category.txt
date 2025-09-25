@@ -1,0 +1,74 @@
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-1
+Category breadcrumb
+Apparel & Accessories > Jewelry > Anklets
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-2
+Category breadcrumb
+Apparel & Accessories > Jewelry > Body Jewelry
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-3
+Category breadcrumb
+Apparel & Accessories > Jewelry > Bracelets
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-4
+Category breadcrumb
+Apparel & Accessories > Jewelry > Brooches & Lapel Pins
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-5
+Category breadcrumb
+Apparel & Accessories > Jewelry > Charms & Pendants
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-6
+Category breadcrumb
+Apparel & Accessories > Jewelry > Earrings
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-7
+Category breadcrumb
+Apparel & Accessories > Jewelry > Jewelry Sets
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-8
+Category breadcrumb
+Apparel & Accessories > Jewelry > Necklaces
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-9
+Category breadcrumb
+Apparel & Accessories > Jewelry > Rings
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-12
+Category breadcrumb
+Apparel & Accessories > Jewelry > Smart Watches
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-10
+Category breadcrumb
+Apparel & Accessories > Jewelry > Watch Accessories
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-10-1
+Category breadcrumb
+Apparel & Accessories > Jewelry > Watch Accessories > Watch Bands
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-10-2
+Category breadcrumb
+Apparel & Accessories > Jewelry > Watch Accessories > Watch Stickers & Decals
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-10-3
+Category breadcrumb
+Apparel & Accessories > Jewelry > Watch Accessories > Watch Winders
+
+Category ID
+gid://shopify/TaxonomyCategory/aa-6-11
+Category breadcrumb
+Apparel & Accessories > Jewelry > Watches

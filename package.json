@@ -1,0 +1,50 @@
+{
+  "name": "ftp-product-cron",
+  "version": "1.0.0",
+  "description": "Daily cron job to fetch and process product data from FTP server and sync with Shopify",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "NODE_ENV=development node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ftp-test": "node src/index.js",
+    "shopify-test": "node test-shopify.js",
+    "shopify-demo": "node demo-shopify.js",
+    "shopify-debug": "node debug-shopify.js",
+    "run-once": "node src/index.js --run-once",
+    "shopify-only": "node src/index.js --shopify-only",
+    "create-products": "node src/index.js --create-products",
+    "create-products-dry": "node src/index.js --create-products --dry-run",
+    "create-products-batch": "node src/index.js --create-products --batch-size 3",
+    "create-products-force": "node src/index.js --create-products --no-skip-existing",
+    "test-create": "node test-create-products.js",
+    "test-product-creation": "node test-product-creation.js",
+    "test-create-update": "node test-create-update-flow.js",
+    "health-server": "node health-server.js",
+    "start-with-health": "./start.sh"
+  },
+  "keywords": [
+    "cron",
+    "ftp",
+    "csv",
+    "product-data",
+    "shopify",
+    "automation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shopify/admin-api-client": "^1.1.1",
+    "@shopify/shopify-api": "^12.0.0",
+    "axios": "^1.12.2",
+    "basic-ftp": "^5.0.4",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.21.2",
+    "node-cron": "^3.0.2",
+    "winston": "^3.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

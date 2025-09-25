@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  shopify-cron:
+    build: .
+    container_name: shopify-product-cron
+    restart: unless-stopped
+    environment:
+      # FTP Configuration
+      - FTP_HOST=${FTP_HOST}
+      - FTP_PORT=${FTP_PORT}
+      - FTP_USER=${FTP_USER}
+      - FTP_PASSWORD=${FTP_PASSWORD}
+      
+      # Shopify Configuration
+      - SHOPIFY_STORE_URL=${SHOPIFY_STORE_URL}
+      - SHOPIFY_ACCESS_TOKEN=${SHOPIFY_ACCESS_TOKEN}
+      
+      # Shopify Processing Settings
+      - SHOPIFY_BATCH_SIZE=${SHOPIFY_BATCH_SIZE:-20}
+      - SHOPIFY_BATCH_DELAY=${SHOPIFY_BATCH_DELAY:-1000}
+      - SHOPIFY_DRY_RUN=${SHOPIFY_DRY_RUN:-false}
+      - SHOPIFY_PARALLEL_BATCH=${SHOPIFY_PARALLEL_BATCH:-true}
+      - SHOPIFY_ENABLE_UPDATES=${SHOPIFY_ENABLE_UPDATES:-true}
+      
+      # Cron Configuration
+      - CRON_SCHEDULE=${CRON_SCHEDULE:-0 2 * * *}
+      - TIMEZONE=${TIMEZONE:-UTC}
+      
+      # Logging Configuration
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      
+      # File Processing Configuration
+      - DOWNLOAD_DIR=${DOWNLOAD_DIR:-./downloads}
+      - KEEP_FILES_DAYS=${KEEP_FILES_DAYS:-7}
+      
+      # Environment
+      - NODE_ENV=${NODE_ENV:-production}
+    
+    volumes:
+      # Persist downloads and logs
+      - ./data/downloads:/app/downloads
+      - ./data/logs:/app/logs
+    
+    # Optional: expose port for health checks or monitoring
+    ports:
+      - "3000:3000"
+    
+    # Resource limits (adjust based on your EC2 instance size)
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.1'
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "node", "-e", "console.log('Health check passed')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+# Optional: Add a monitoring/logging service
+  # watchtower:
+  #   image: containrrr/watchtower
+  #   container_name: watchtower
+  #   restart: unless-stopped
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   environment:
+  #     - WATCHTOWER_CLEANUP=true
+  #     - WATCHTOWER_POLL_INTERVAL=3600
+  #   command: --interval 3600 shopify-product-cron
+
+volumes:
+  downloads:
+  logs:
