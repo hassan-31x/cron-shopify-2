@@ -382,7 +382,7 @@ show_final_instructions() {
     echo -e "${YELLOW}System service:${NC}      systemctl status shopify-cron"
     echo -e "${YELLOW}Container stats:${NC}     docker stats shopify-product-cron"
     
-    echo -e "\n${GREEN}Application is running at: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):3000${NC}"
+    echo -e "\n${GREEN}Application is running at: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):3002${NC}"
 }
 
 # Main execution

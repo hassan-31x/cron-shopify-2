@@ -5,7 +5,7 @@ const path = require('path');
 
 // Create Express app for health checks and monitoring
 const app = express();
-const PORT = process.env.HEALTH_CHECK_PORT || 3000;
+const PORT = process.env.HEALTH_CHECK_PORT || 3002;
 
 // Middleware
 app.use(express.json());
